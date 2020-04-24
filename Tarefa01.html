@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title><Tarefa 1></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+  
+    <script>
+       
+        var universidade = {
+            nome: 'UFOP',
+            curso: 'Enguenharia da Computaçao',
+            periodos: 10,
+            cargaHoraria: 3630
+        }
+
+        var republica = {
+            nome: 'Orfanato',
+            anos:10,
+            qtdMoradores: 5
+        }
+
+        var pessoa0 = new Object();
+        var pessoa1 = new Object();
+        var pessoa2 = new Object();
+        var pessoa3 = new Object();
+        var pessoa4 = new Object();
+       
+        pessoa0.nome = "Pedro";
+        pessoa0.idade = 20;
+        pessoa1.nome = "Ana";
+        pessoa1.idade = 17;
+        pessoa2.nome = "Paulo";
+        pessoa2.idade = 23;
+        pessoa3.nome = "Armando";
+        pessoa3.idade = 17;
+        pessoa4.nome = "André";
+       
+        var cliente = [pessoa0, pessoa1, pessoa2, pessoa3];
+
+
+        function checarIDs(usuario, nome) {
+            if (usuario == "André"){
+                var i=0;
+               
+                while (i < cliente.length) {
+                    if(cliente[i].nome == nome){
+                        if(cliente[i].idade >= 18){
+                            console.log(cliente[i].nome, "pode tomar cerveja");
+                            break;
+                        }else{
+                            console.log(cliente[i].nome, "vai tomar coca-cola")
+                            break;
+                        }
+                    }
+                    i++;
+                    if(i == cliente.length){ //verifica se a lista foi pecorrida sem encontrar nenhum cliente
+                        console.log("Cliente não encontrado!");
+                    }
+                }
+            }else{
+                console.log("Usuário não autorizado!");
+            }
+        }
+        
+        checarIDs("André", "Armando");
+    
+    </script>  
+</body>
+</html>
